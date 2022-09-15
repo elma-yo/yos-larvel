@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
-            $table->timestamps();
+            $table->timestamps(); // created_at, updated_at
         });
     }
 
