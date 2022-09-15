@@ -11,7 +11,7 @@
         <ul>
             @forelse ($posts as $index => $post)
                 <li>
-                    <a href="/post/{{ $index }}">
+                    <a href="{{ route('posts.show', $index) }}">
                         {{ $post }}
                     </a>
                 </li>
