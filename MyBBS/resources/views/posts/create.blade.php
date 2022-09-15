@@ -9,13 +9,13 @@
 
     <h1>Add New Post</h1>
 
-    <form method="POST" action="{{ route('posts.store') }}">
+    <form method="post" action="{{ route('posts.store') }}">
         @csrf
 
         <div class="form-group">
             <label>
                 Title
-                <input type="text" name="title">
+                <input type="text" name="title" value="{{ old('title') }}">
             </label>
             @error('title')
                 <div class="error">{{ $message }}</div>
@@ -24,7 +24,7 @@
         <div class="form-group">
             <label>
                 Body
-                <textarea name="body"></textarea>
+                <textarea name="body">{{ old('body') }}</textarea>
             </label>
             @error('body')
                 <div class="error">{{ $message }}</div>
