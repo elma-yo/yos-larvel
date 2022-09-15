@@ -54,3 +54,9 @@ button {
 .form-button {
     text-align: right;
 }
+
+.err {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
