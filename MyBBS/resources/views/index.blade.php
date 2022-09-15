@@ -9,10 +9,6 @@
     <div class="container">
         <h1>My BBS</h1>
         <ul>
-            {{-- @foreach ($posts as $post)
-                <li>{{ $post }}</li>
-            @endforeach --}}
-
             @forelse ($posts as $post)
                 <li>{{ $post}}</li>
             @empty
