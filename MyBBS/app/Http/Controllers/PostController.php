@@ -32,9 +32,9 @@ class PostController extends Controller
             'title' => 'required|min:3',
             'body' => 'required',
         ], [
-            'title.required' => 'タイトルは必要です。',
+            'title.required' => 'タイトルは必須です。',
             'title.min' => ':min 文字以上入力してください。',
-            'body.required' => '本文は必要です。',
+            'body.required' => '本文は必須です。',
         ]);
 
         $post = new Post();
@@ -50,5 +50,24 @@ class PostController extends Controller
     {
         return view('posts.edit')
             ->with(['post' => $post]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required',
+        ], [
+            'title.required' => 'タイトルは必須です。',
+            'title.min' => ':min 文字以上入力してください。',
+            'body.required' => '本文は必須です。',
+        ]);
+
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+
+        return redirect()
+            ->route('posts.show', $post);
     }
 }
