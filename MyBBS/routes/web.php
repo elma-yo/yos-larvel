@@ -32,3 +32,7 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
 Route::patch('/posts/{post}/update', [PostController::class, 'update'])
     ->name('posts.update')
     ->where('post', '[0-9]+');
+
+Route::delete('/posts/{post}/destory', [PostController::class, 'destory'])
+    ->name('posts.destory')
+    ->where('post', '[0-9]+');
