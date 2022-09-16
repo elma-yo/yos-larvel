@@ -54,7 +54,7 @@ class PostController extends Controller
             ->route('posts.show', $post);
     }
 
-    public function destory(Post $post)
+    public function destroy(Post $post)
     {
         $post->delete();
 
