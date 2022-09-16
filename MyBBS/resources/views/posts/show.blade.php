@@ -13,6 +13,7 @@
         <form method="post" action="{{ route('posts.destroy', $post) }}" id="delete_post">
             @method('DELETE')
             @csrf
+
             <button class="btn">[x]</button>
         </form>
     </h1>
@@ -20,7 +21,6 @@
 
     <h2>Comments</h2>
     <ul>
-
         <li>
             <form method="post" action="{{ route('comments.store', $post) }}" class="comment-form">
                 @csrf
