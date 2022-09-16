@@ -9,7 +9,8 @@
 
     <h1>Edit Post</h1>
 
-    <form method="post" action="">
+    <form method="post" action="{{ route('post.update', $post) }}">
+        @method('PATCH')
         @csrf
 
         <div class="form-group">
