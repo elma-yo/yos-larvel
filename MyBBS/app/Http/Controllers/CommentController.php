@@ -13,6 +13,7 @@ class CommentController extends Controller
         $request->validate([
             'body' => 'required',
         ]);
+        
         $comment = new Comment();
         $comment->post_id = $post->id;
         $comment->body = $request->body;
